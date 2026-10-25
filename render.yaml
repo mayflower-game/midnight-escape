@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: midnight-escape
+    runtime: node
+    plan: free
+    region: singapore
+    buildCommand: corepack enable && pnpm install --frozen-lockfile --config.block-exotic-subdeps=false && pnpm build
+    startCommand: pnpm start
+    healthCheckPath: /health
+    envVars:
+      - key: NODE_ENV
+        value: production
