@@ -4,7 +4,7 @@ services:
     runtime: node
     plan: free
     region: singapore
-    buildCommand: corepack enable && pnpm install --frozen-lockfile --config.block-exotic-subdeps=false && pnpm build
+    buildCommand: pnpm install --frozen-lockfile --config.block-exotic-subdeps=false && pnpm build
     startCommand: pnpm start
     healthCheckPath: /health
     envVars:
